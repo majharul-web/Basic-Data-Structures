@@ -33,7 +33,13 @@ int main()
         cout << i << " ";
     }
 
-    // this code complexity == Order of N O(N)
+    /*
+    #How to understand is it linear complexity
+
+    1.this code complexity == Order of N O(N)
+    2.order of operation diff is not big in every loop
+    3.loop increment/decrement part using + or -
+    */
 
     return 0;
 }
