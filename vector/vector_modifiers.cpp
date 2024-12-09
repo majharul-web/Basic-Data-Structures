@@ -5,6 +5,7 @@ int main()
 {
     vector<int> v = {1, 5, 6, 9, 7, 52, 3};
     vector<int> v2 = {100, 200};
+    vector<int> v3 = {1, 2, 5, 6, 9, 2, 6, 2};
 
     // assign vector
     /*
@@ -24,11 +25,26 @@ int main()
 
     // delete from vector:v.erase(position)
     // v.erase(v.begin() + 2);
-    v.erase(v.begin() + 2, v.begin() + 4);
+    // v.erase(v.begin() + 2, v.begin() + 4);
 
-    for (int x : v)
+    // replace element
+    // replace(v3.begin(), v3.end() - 1, 2, 100);
+
+    // for (int x : v3)
+    // {
+    //     cout << x << " ";
+    // }
+
+    // vector<int>::iterator it = find(v3.begin(), v3.end(), 5);
+    auto it = find(v3.begin(), v3.end(), 100);
+
+    if (it == v3.end())
     {
-        cout << x << " ";
+        cout << "Not Found" << endl;
+    }
+    else
+    {
+        cout << "Found" << endl;
     }
 
     return 0;
