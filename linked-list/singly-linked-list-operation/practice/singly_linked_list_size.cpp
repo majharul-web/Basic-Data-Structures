@@ -33,11 +33,15 @@ void insert_at_tail(Node *&head, Node *&tail, int val)
 void print_linked_list(Node *head)
 {
     Node *temp = head;
+
+    int count = 0;
     while (temp != NULL)
     {
-        cout << temp->val << endl;
+        count++;
+
         temp = temp->next;
     }
+    cout << count << endl;
 }
 
 int main()
@@ -60,5 +64,5 @@ int main()
 
     print_linked_list(head);
 
-        return 0;
+    return 0;
 }

@@ -27,22 +27,26 @@ void insert_at_tail(Node *&head, Node *&tail, int val)
 
     tail->next = newnode;
     tail = newnode;
-    // tail = tail->next;
 }
 
-void print_linked_list(Node *head)
+bool is_sorted(Node *head)
 {
     Node *temp = head;
-    while (temp != NULL)
+
+    while (temp != NULL && temp->next != NULL)
     {
-        cout << temp->val << endl;
-        temp = temp->next;
+        if (temp->val > temp->next->val) // If current value > next value, not sorted
+        {
+            return false;
+        }
+        temp = temp->next; // Move to the next node
     }
+
+    return true; // If we reach here, the list is sorted
 }
 
 int main()
 {
-
     Node *head = NULL;
     Node *tail = NULL;
 
@@ -58,7 +62,14 @@ int main()
         insert_at_tail(head, tail, val);
     }
 
-    print_linked_list(head);
+    if (is_sorted(head))
+    {
+        cout << "YES" << endl;
+    }
+    else
+    {
+        cout << "NO" << endl;
+    }
 
-        return 0;
+    return 0;
 }

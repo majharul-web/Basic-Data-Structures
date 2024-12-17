@@ -27,22 +27,30 @@ void insert_at_tail(Node *&head, Node *&tail, int val)
 
     tail->next = newnode;
     tail = newnode;
-    // tail = tail->next;
 }
 
-void print_linked_list(Node *head)
+bool contains_duplicate(Node *head)
 {
+    bool visited[101] = {false}; // Array to track seen values, size 101 (0 to 100)
+
     Node *temp = head;
+
     while (temp != NULL)
     {
-        cout << temp->val << endl;
-        temp = temp->next;
+        if (visited[temp->val]) // If value already exists, duplicate found
+        {
+            return true;
+        }
+
+        visited[temp->val] = true; // Mark the value as seen
+        temp = temp->next;         // Move to the next node
     }
+
+    return false; // No duplicates found
 }
 
 int main()
 {
-
     Node *head = NULL;
     Node *tail = NULL;
 
@@ -51,14 +59,21 @@ int main()
     while (true)
     {
         cin >> val;
-        if (val == -1)
+        if (val == -1) // Stop input when -1 is encountered
         {
             break;
         }
         insert_at_tail(head, tail, val);
     }
 
-    print_linked_list(head);
+    if (contains_duplicate(head))
+    {
+        cout << "YES" << endl; // Duplicate found
+    }
+    else
+    {
+        cout << "NO" << endl; // No duplicates found
+    }
 
-        return 0;
+    return 0;
 }
