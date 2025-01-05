@@ -19,8 +19,7 @@ int main()
     {
         cout << st.top() << endl;
         st.pop();
-        st.
-    }
+        }
 
     return 0;
 }
