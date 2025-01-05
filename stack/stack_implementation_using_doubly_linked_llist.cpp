@@ -40,10 +40,7 @@ public:
 
     void pop()
     {
-        if (tail == NULL)
-        {
-            return;
-        }
+
         sz--;
         Node *deletenode = tail;
         tail = tail->prev;
@@ -60,10 +57,7 @@ public:
 
     int top()
     {
-        if (tail == NULL)
-        {
-            throw runtime_error("Stack is empty");
-        }
+
         return tail->val;
     }
 
