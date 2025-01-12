@@ -1,14 +1,14 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Node
+class D_Node
 {
 public:
     int val;
-    Node *prev;
-    Node *next;
+    D_Node *prev;
+    D_Node *next;
 
-    Node(int val)
+    D_Node(int val)
     {
         this->prev = NULL;
         this->val = val;
@@ -19,14 +19,14 @@ public:
 class MyStack
 {
 public:
-    Node *head = NULL;
-    Node *tail = NULL;
+    D_Node *head = NULL;
+    D_Node *tail = NULL;
     int sz = 0;
 
     void push(int val)
     {
         sz++;
-        Node *newnode = new Node(val);
+        D_Node *newnode = new D_Node(val);
         if (head == NULL)
         {
             head = newnode;
@@ -42,7 +42,7 @@ public:
     {
 
         sz--;
-        Node *deletenode = tail;
+        D_Node *deletenode = tail;
         tail = tail->prev;
         if (tail == NULL)
         {
