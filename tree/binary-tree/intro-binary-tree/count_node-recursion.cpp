@@ -101,3 +101,15 @@ int main()
 
     return 0;
 }
+
+/*
+
+Input:
+1 2 3 4 5 -1 -1 -1 -1 -1 -1
+
+Output:
+printing tree
+1 2 3 4 5
+count : 5
+
+*/

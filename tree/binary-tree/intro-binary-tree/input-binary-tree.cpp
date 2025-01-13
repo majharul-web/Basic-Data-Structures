@@ -40,7 +40,6 @@ int main()
 
     if (n == -1)
     {
-        cout << "Tree is empty" << endl;
         return 0;
     }
 
@@ -71,6 +70,19 @@ int main()
         }
     }
 
+    cout << "printing tree" << endl;
+
     levelorder(root);
     return 0;
 }
+
+/*
+
+Input:
+1 2 3 4 5 -1 -1 -1 -1 -1 -1
+
+Output:
+printing tree
+1 2 3 4 5
+
+*/

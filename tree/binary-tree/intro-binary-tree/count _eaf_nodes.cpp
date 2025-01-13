@@ -1,5 +1,3 @@
-
-
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -52,15 +50,14 @@ Node *createbinarytree()
     return root;
 }
 
-int printlevelorder(Node *root)
+void printlevelorder(Node *root)
 {
     if (!root)
     {
         cout << "Tree is empty" << endl;
-        return 0;
+        return;
     }
 
-    int count = 0;
     queue<Node *> q;
     q.push(root);
 
@@ -69,7 +66,6 @@ int printlevelorder(Node *root)
         Node *curr = q.front();
         q.pop();
         cout << curr->val << " ";
-        count++;
 
         if (curr->left)
         {
@@ -80,8 +76,23 @@ int printlevelorder(Node *root)
             q.push(curr->right);
         }
     }
+}
 
-    return count;
+int countleafnode(Node *root)
+{
+    if (!root)
+    {
+        return 0;
+    }
+
+    if (root->left == NULL && root->right == NULL)
+    {
+        return 1;
+    }
+    int l = countleafnode(root->left);
+    int r = countleafnode(root->right);
+
+    return l + r;
 }
 
 int main()
@@ -89,22 +100,21 @@ int main()
     Node *root = createbinarytree();
 
     cout << "printing tree" << endl;
-    int count = printlevelorder(root);
+    printlevelorder(root);
     cout << endl;
-    cout << "count" << endl;
-    cout << count << endl;
+    cout << "leaf count : " << countleafnode(root);
 
     return 0;
 }
 
 /*
 
-Input:
-1 2 3 4 5 -1 -1 -1 -1 -1 -1
+Input : 1 2 3 4 5 -1 -1 -1 -1 -1 -1
 
 Output:
 printing tree
 1 2 3 4 5
-count : 5
+leaf count : 3
 
-*/
+
+ */
