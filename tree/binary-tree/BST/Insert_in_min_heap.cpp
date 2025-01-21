@@ -40,3 +40,14 @@ int main()
 
     return 0;
 }
+
+/*
+input:
+
+5
+2 4 5 10 8
+1
+
+output: 1 4 2 10 8 5
+
+*/
