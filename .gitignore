@@ -1,9 +1,4 @@
 
-# Ignore exam and assignment files
-exam/
-assignment/
-
-
 # Ignore binary files and compiled files
 *.exe
 *.out
