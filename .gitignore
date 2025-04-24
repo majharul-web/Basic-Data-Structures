@@ -4,8 +4,7 @@
 *.out
 *.o
 
-# Ignore files without extensions
-[!^.]*
+
 
 # Ignore folders for builds or outputs
 build/
